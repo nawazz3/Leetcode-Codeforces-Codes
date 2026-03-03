@@ -1,0 +1,29 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # n=len(nums) first method
+        # for i in range(n):
+        #     for j in range(i+1,n):
+        #         if nums[i]+nums[j]==target:
+        #             return i,j
+
+        # n=len(nums)
+        # mp={} #create a map
+        # for i in range(n):
+        #     mp[nums[i]]=i #stores in indexes of last occurances of each element
+        # for i in range(n):
+        #     remained=target-nums[i] #Just check if this value is present in map or not
+        #     if(mp.get(remained) and mp[remained]!=i): 
+        #         return i,mp[remained]#mp.get( remained ) checks if its present of not and mp[remained]!=i they are not adding same number twice
+        n=len(nums)
+        mp={} #create a map
+        for i in range(n):
+            remained=target-nums[i] #Just check if this value is present in map or not
+            if remained in mp: 
+                return i,mp[remained]
+            mp[nums[i]]=i
+
+
+
+
+
+        
